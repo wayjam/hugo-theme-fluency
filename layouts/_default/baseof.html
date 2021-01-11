@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html
+ lang="{{ $.Site.LanguageCode | default "en" }}"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  {{ partial "head.html" . }}
+  <body class="theme-light">
+    {{ partial "header.html" . }}
+    {{ block "main" . }}{{ end }}
+    {{ partialCached "footer.html" . }}
+  </body>
+</html>

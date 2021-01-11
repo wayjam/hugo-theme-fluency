@@ -1,0 +1,40 @@
+<script>
+if (window.localStorage.getItem('theme') === 'dark') {
+  document.body.classList.remove('theme-light')
+  document.body.classList.add('theme-dark')
+}
+</script>
+<header id="header">
+  <div class="row">
+    <div class="container has-padding nav">
+      <div class="navbar-brand">
+        <a class="logo navbar-button" href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">
+          <span>{{ .Site.Title }}</span>
+        </a>
+      </div>
+      <nav class="navbar" role="navigation">
+        <ul>
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+            <li class="nav-bar-item{{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }} active{{ end }}">
+              <a class="nav-link navbar-button" href="{{ .URL | relLangURL }}" title="{{ .Title }}">
+                <span>{{ .Name | lower }}</span>
+              </a>
+            </li>
+          {{ end }}
+          <li>
+            <a class="nav-link navbar-button" href="{{ .Site.RSSLink }}" type="application/rss+xml"><span>rss</span></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="theme-selector">
+        <button class="button is-text" id="theme-selector-button" title="toggle theme"><span>light mode</span></button>
+      </div>
+    </div>
+    <div class="container has-padding">
+      <div class="breadcrumb">
+        {{ partial "breadcrumb.html" . }}
+      </div>
+    </div>
+  </div>
+</header>

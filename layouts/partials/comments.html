@@ -1,0 +1,6 @@
+<!-- refer to https://gohugo.io/content-management/comments/ -->
+{{ with .Site.Params.thirdPartyComment }}
+  {{ . | safeHTML }}
+{{ else }}
+  {{ template "_internal/disqus.html" . }}
+{{ end }}

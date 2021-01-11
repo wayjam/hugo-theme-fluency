@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section id="main" class="terms">
+  <div class="container has-padding">
+    {{ if eq .Title "Tags" }}
+      <h2><i class="flaticon-tag"></i>{{ .Title }}</h2>
+    {{ else }}
+      <h2><i class="flaticon-paper"></i>{{ .Title }}</h2>
+    {{ end }}
+    <ul class="term-columns">
+      {{ range .Data.Terms.Alphabetical }} {{ if ne .Page.Title "" }}
+      <li>
+        <a href="{{ .Page.Permalink }}" title="last seen at {{ .Page.Lastmod.Format "January 02, 2006" }}">{{ .Page.Title }}({{.Count}})</a>
+      </li>
+      {{ end }} {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

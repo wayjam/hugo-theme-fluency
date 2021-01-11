@@ -1,0 +1,93 @@
+{{ define "main" }}
+{{ $enable_comment := and (not (.Site.Params.disableComment | default false)) (not (in (.Site.Params.disableCommentByType | default "[]string") .Type)) }}
+<main id="main">
+  <div class="container has-padding">
+    <div class="article-card post single">
+      <h1 class="title">{{ .Title }}</h1>
+      <div class="post-info">
+        <span><i class="flaticon-schedule"></i><time datetime={{ .Date.Format "2006-01-02T15:04:05Z0700" }} class="date">{{ .Date.Format "January 02, 2006" }}</time></span>
+        <span><i class="flaticon-time"></i>{{ .ReadingTime | default (printf "%s mins" .ReadingTime) }} min read</span>
+        {{ with .Type }}
+          <span>{{ .}} </span>
+        {{ end }}
+        {{ with (partial "author.html" . ) }}
+          <span>{{.}}</span>
+        {{end}}
+        {{ if $enable_comment }}
+          <a href="#comments">
+            <i class="flaticon-chat"></i>
+          </a>
+        {{ end }}
+      </div>
+      <article class="post-entry content">
+        {{.Content}}
+      </article>
+    </div>
+
+    {{ if not (eq .Type "page") }}
+    <div class="meta article-card">
+      <div class="row">
+        <span class="label"><i class="flaticon-schedule"></i>Published at </span><time>{{ .PublishDate.Local.Format "2006-01-02 15:04 MST" }}</time>
+        {{ if ne .Lastmod .PublishDate }}(last updated at <time>{{ .LastMod.Local.Format "2006-01-02 15:04 MST" }}</time>){{ end }}
+      </div>
+
+      {{ with .Params.tags }}
+        <div class="row">
+          <span class="label"><i class="flaticon-tag"></i>Tagged with</span>
+          <ul class="tags">
+          {{ range . }}
+            <li class="hashed-tag"><a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+          {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+
+      <div class="row social-share">
+        <span class="label">Share with</span>
+        {{ $tag_list := "" }}
+        {{ with .Params.Tags }}
+          {{ $tag_list = delimit . "," }}
+        {{ end }}
+        <a 
+          target="_blank" 
+          title="share to twitter"
+          rel="noopener noreferrer"
+          aria-label="share {{ .Title | plainify }} on twitter"
+          href="https://twitter.com/intent/tweet/?text={{ .Title }}&amp;url={{ .Permalink }}&amp;hashtags={{ $tag_list }}">
+          <i class="flaticon-twitter"></i>
+        </a>
+        <a
+          target="_blank"
+          title="share to reddit"
+          rel="noopener noreferrer"
+          aria-label="share {{ .Title | plainify }} on reddit"
+          href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}">
+          <i class="flaticon-reddit"></i>
+        </a>
+        <a
+          target="_blank"
+          title="share to facebook"
+          rel="noopener noreferrer"
+          aria-label="share {{ .Title | plainify }} on facebook"
+          href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}">
+          <i class="flaticon-facebook"></i>
+        </a>
+      </div>
+
+      {{ with .Site.Params.extraMeta }}
+        <div class="row">
+        {{ . | safeHTML }}
+        </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ if $enable_comment }}
+      <div id="comments" class="article-card">
+        {{ partial "comments.html" . }}
+      </div>
+    {{ end }}
+
+  </div>
+</main>
+{{ end }}

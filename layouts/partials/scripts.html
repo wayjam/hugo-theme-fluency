@@ -1,0 +1,10 @@
+{{ $script := resources.Get "js/main.js" | minify | fingerprint }}
+<script src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous" async></script>
+
+{{ if .Site.Params.enableMathJax }}
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{{ end }}
+
+<noscript>
+<style type=text/css>#theme-selector-button{display:none}</style>
+</noscript>

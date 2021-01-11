@@ -1,0 +1,37 @@
+<footer id="footer">
+  <div class="container has-padding is-flex">
+    <ul class="links">
+      <li>
+        <a class="nav-link navbar-button" href="{{ .Site.RSSLink }}" type="application/rss+xml">RSS</a>
+      </li>
+      {{ with .Site.Params.twitter }}
+      <li>
+        <a rel="nofollow" target="_blank" href="https://twitter.com/{{ . }}" title="Twitter">Twitter</a>
+      </li>
+      {{ end }} {{ with .Site.Params.github }}
+      <li>
+        <a rel="nofollow" target="_blank" href="https://github.com/{{ .  }}" title="Github">Github</a>
+      </li>
+      {{ end }}
+      <li>
+        <a
+          rel="nofollow"
+          target="_blank"
+          href="https://github.com/wayjam/hugo-theme-fluency"
+          title="using Hugo theme fluency">
+          Theme Fluency
+        </a>
+      </li>
+      <li>
+        <a rel="nofollow" target="_blank" href="https://gohugo.io" title="Built with hugo">Built with Hugo</a>
+      </li>
+    </ul>
+    <span class="copyright">
+      {{ with .Site.Params.copyright }}
+        {{ .| safeHTML }} {{ else }} &copy; {{ now.Format "2006"}} {{ .Site.Title }}
+      {{end}}
+    </span>
+  </div>
+</footer>
+
+{{ partial "scripts.html" . }}

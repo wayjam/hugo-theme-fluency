@@ -1,0 +1,23 @@
+{{ define "main" }}
+<main id="main" class="list">
+  <div class="container has-padding">
+    <h2><i class="flaticon-tag"></i>{{ .Title }}</h2>
+    <ul class="list">
+      {{ range (.Paginator (.Site.Params.pageSize| default 20)).Pages }}
+      <li class="post">
+        <a href="{{ .Permalink}}" class="title">{{ .Title }}</a>
+        <time class="date">{{ .PublishDate.Format "2006-01-02" }}</time>
+        {{ with .Params.tags }}
+          <ul class="tags">
+          {{ range . }}
+            <li class="hashed-tag"><a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+          {{ end }}
+          </ul>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+    {{ partial "pagination.html" . }}
+  </div>
+</main>
+{{ end }}
