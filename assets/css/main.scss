@@ -2,6 +2,11 @@
 * Fluency Style
 */
 
+:root{
+  --header-height: 54px;
+  --footer-height: 8rem;
+}
+
 body {
   background-color: var(--theme-body-background);
   line-height: 1.625;
@@ -220,7 +225,8 @@ body {
 }
 
 #main {
-  min-height: 500px;
+  position: relative;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height))
 }
 
 #main.list {
@@ -279,10 +285,12 @@ body {
 
 #footer {
   width: 100%;
-  margin: 5.5em 0 0;
+  margin: 1rem 0 0;
   border-top: 1px solid var(--theme-border-black-high-contrast);
   background-color: var(--theme-secondary-background);
-  padding: 3rem 1rem 3rem;
+  line-height: var(--footer-height);
+  padding-left: 1rem;
+  padding-right: 1rem;
   .container {
     justify-content: space-between;
     align-items: center;
@@ -419,6 +427,9 @@ body {
     }
     ul > li {
       list-style: disc outside none;
+    }
+    pre {
+      background-color: var(--theme-code-highlight-background);
     }
     table {
       border-collapse: collapse;

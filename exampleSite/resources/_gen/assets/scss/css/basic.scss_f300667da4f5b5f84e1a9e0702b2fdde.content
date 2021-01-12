@@ -72,7 +72,6 @@ pre {
   font-size: 0.875rem;
   overflow: auto;
   border: 1px solid var(--theme-border);
-  background-color: var(--theme-body-background-medium);
   padding: 1rem;
   margin: 1rem 0 0;
   white-space: pre;

@@ -2,6 +2,10 @@
 /*
 * Fluency Style
 */
+:root {
+  --header-height: 54px;
+  --footer-height: 8rem; }
+
 body {
   background-color: var(--theme-body-background);
   line-height: 1.625;
@@ -164,7 +168,8 @@ body {
       content: '/'; }
 
 #main {
-  min-height: 500px; }
+  position: relative;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height)); }
 
 #main.list h2 {
   align-items: center; }
@@ -212,10 +217,12 @@ body {
 
 #footer {
   width: 100%;
-  margin: 5.5em 0 0;
+  margin: 1rem 0 0;
   border-top: 1px solid var(--theme-border-black-high-contrast);
   background-color: var(--theme-secondary-background);
-  padding: 3rem 1rem 3rem; }
+  line-height: var(--footer-height);
+  padding-left: 1rem;
+  padding-right: 1rem; }
   #footer .container {
     justify-content: space-between;
     align-items: center;
@@ -327,6 +334,9 @@ body {
 
 .post .content ul > li {
   list-style: disc outside none; }
+
+.post .content pre {
+  background-color: var(--theme-code-highlight-background); }
 
 .post .content table {
   border-collapse: collapse;
