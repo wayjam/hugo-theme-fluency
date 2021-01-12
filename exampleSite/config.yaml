@@ -24,8 +24,8 @@ taxonomies:
   category: categories
   tag: tags
 
-permalinks:
-  posts: posts/:slug
+# permalinks:
+#   posts: :section/:slug
 
 params:
   author: Hugo Author
@@ -46,16 +46,19 @@ params:
     terms: 60
     archives: 20
   
+  # extra info below post
   # extraMeta: |
   #   this is a license
   #   <p>another line</p>
   
+  # comment
   disableComment: true
   disableCommentByType:
     - page
   thirdPartyComment: |
     this is your comment
   
+  # refer to https://gohugo.io/content-management/formats/
   enableMathJax: true
 
 menu:
