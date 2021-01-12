@@ -239,6 +239,7 @@ summary {
   --theme-background: white;
   --theme-text: #171717;
   --theme-text-subtle: #5e5e5e;
+  --theme-text-invert: white;
   --theme-box-shadow-light: rgba(0, 0, 0, 0.09);
   --theme-box-shadow-medium: rgba(0, 0, 0, 0.108);
   --theme-box-shadow-heavy: rgba(0, 0, 0, 0.132);
@@ -300,6 +301,9 @@ summary {
   --theme-primary-invert: black;
   --theme-secondary-base: #757575;
   --theme-secondary-background: #2e2e2e; }
+  .theme-dark .highlight {
+    --theme-blue: #569cd6;
+    --theme-green: #57a64a; }
 
 .theme-light,
 .theme-dark {
