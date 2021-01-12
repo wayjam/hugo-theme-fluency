@@ -1,7 +1,10 @@
 {{ define "main" }}
 <main id="main" class="index-page homepage" role="main">
   <div class="container has-padding">
-    {{ $pageSize := site.Params.pageSize | default 10 }}
+    {{ $pageSize := 5 }}
+    {{ if and site.Params.pageSize site.Params.pageSize.index }}
+      {{ $pageSize := site.Params.pageSize.index }}
+    {{ end}}
     {{ $paginator := .Paginate (where site.RegularPages "Section" "in" site.Params.mainSections) $pageSize }}
     <div class="article-list">
       {{ range $paginator.Pages }}

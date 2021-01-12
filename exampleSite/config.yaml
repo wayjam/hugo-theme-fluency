@@ -3,7 +3,6 @@ languageCode: en-us
 title: Fluency
 theme: fluency
 enableRobotsTXT: true
-paginate: 3 # Set the number of posts to show before overflowing to the next page.
 summaryLength: 100 # Configure how long the post summary should be on the homepage.
 pygmentsUseClasses: true # enable theme-defined highlight style
 hasCJKLanguage: false
@@ -29,14 +28,24 @@ permalinks:
   posts: posts/:slug
 
 params:
-  # change this
   author: Hugo Author
+  
+  # footer
   twitter: gohugoio
   github: gohugoio
   # copyright: "© 2021 <a href='https://github.com/wayjam/hugo-theme-fluency'>Hugo Theme Fluency</a>."
+
+  # main section will list at index page
   mainSections:
     - posts
-  pageSize: 5
+  
+  # set number of post of specify type of content
+  pageSize:
+    index: 5
+    list: 10
+    terms: 60
+    archives: 20
+  
   # extraMeta: |
   #   this is a license
   #   <p>another line</p>

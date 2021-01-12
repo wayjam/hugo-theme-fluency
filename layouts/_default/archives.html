@@ -3,7 +3,11 @@
   <div class="container has-padding">
    <h2><i class="flaticon-files"></i>{{ .Title }}</h2>
    <div class="listing">
-      {{ $paginator := .Paginate (where site.RegularPages "Section" "in" site.Params.mainSections) (.Site.Params.pageSize | default 20) }}
+      {{ $pageSize := 20 }}
+      {{ if and site.Params.pageSize site.Params.pageSize.archives }}
+        {{ $pageSize := site.Params.pageSize.archives }}
+      {{ end}}
+      {{ $paginator := .Paginate (where site.RegularPages "Section" "in" site.Params.mainSections) $pageSize }}
       {{ if $paginator }}
       {{ range $paginator.Pages.GroupByPublishDate "2006" }}
         {{ if ne .Key "0001" }}

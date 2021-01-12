@@ -3,7 +3,11 @@
   <div class="container has-padding">
     <h2><i class="flaticon-tag"></i>{{ .Title }}</h2>
     <ul class="list">
-      {{ range (.Paginator (.Site.Params.pageSize| default 20)).Pages }}
+      {{ $pageSize := 10 }}
+      {{ if and site.Params.pageSize site.Params.pageSize.list }}
+        {{ $pageSize := site.Params.pageSize.list }}
+      {{ end}}
+      {{ range (.Paginator $pageSize).Pages }}
       <li class="post">
         <a href="{{ .Permalink}}" class="title">{{ .Title }}</a>
         <time class="date">{{ .PublishDate.Format "2006-01-02" }}</time>
