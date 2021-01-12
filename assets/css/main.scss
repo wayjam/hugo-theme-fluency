@@ -11,7 +11,7 @@ body {
 .button {
   border-radius: 2px;
   background-color: var(--theme-body-background);
-  border-color: var(--theme-text-subtle);
+  border-color: var(--theme-text-subtitle);
   border-width: 1px;
   color: var(--theme-text);
   cursor: pointer;
@@ -140,6 +140,10 @@ body {
           padding-bottom: 2px;
         }
       }
+
+      li:first-of-type .nav-link{
+        padding-left: 0;
+      }
     }
 
     ul li.active .nav-link span,
@@ -247,6 +251,8 @@ body {
     }
     .date {
       float: right;
+      font-style: italic;
+      font-size: 95%;
     }
     hr {
       clear: both;
@@ -840,13 +846,15 @@ body {
       font-weight: 400;
       border-radius: 4px;
       border-left: 4px solid transparent;
+      color: var(--theme-text);
       &:hover {
         background-color: var(--theme-background);
         border-color: var(--theme-primary-base);
         text-decoration: none;
       }
       &:hover,
-      &:visited {
+      &:visited,
+      &:active {
         color: inherit;
       }
     }

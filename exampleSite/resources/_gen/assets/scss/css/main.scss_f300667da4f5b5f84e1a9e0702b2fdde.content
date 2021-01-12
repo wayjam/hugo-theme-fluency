@@ -10,7 +10,7 @@ body {
 .button {
   border-radius: 2px;
   background-color: var(--theme-body-background);
-  border-color: var(--theme-text-subtle);
+  border-color: var(--theme-text-subtitle);
   border-width: 1px;
   color: var(--theme-text);
   cursor: pointer;
@@ -111,6 +111,8 @@ body {
           position: relative;
           border-bottom: 2px solid transparent;
           padding-bottom: 2px; }
+      #header .navbar ul li:first-of-type .nav-link {
+        padding-left: 0; }
     #header .navbar ul li.active .nav-link span,
     #header .navbar ul li .nav-link:hover > span {
       border-color: var(--theme-text); }
@@ -187,7 +189,9 @@ body {
   font-size: 1.2rem; }
 
 #main.list .list .date {
-  float: right; }
+  float: right;
+  font-style: italic;
+  font-size: 95%; }
 
 #main.list .list hr {
   clear: both; }
@@ -635,12 +639,13 @@ body {
   padding: 1em 1.5em;
   font-weight: 400;
   border-radius: 4px;
-  border-left: 4px solid transparent; }
+  border-left: 4px solid transparent;
+  color: var(--theme-text); }
   #main.archives .archive-entry a:hover {
     background-color: var(--theme-background);
     border-color: var(--theme-primary-base);
     text-decoration: none; }
-  #main.archives .archive-entry a:hover, #main.archives .archive-entry a:visited {
+  #main.archives .archive-entry a:hover, #main.archives .archive-entry a:visited, #main.archives .archive-entry a:active {
     color: inherit; }
 
 li.hashed-tag {
