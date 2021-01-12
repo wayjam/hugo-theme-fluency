@@ -1,6 +1,6 @@
 /*
   	Flaticon icon font: Flaticon
-  	Creation date: 09/01/2021 16:32
+   "https://www.flaticon.com/license/icons/1651763%2C3269690%2C134808%2C955252%2C2911213%2C1384019%2C1384005%2C1384017%2C731249%2C617303%2C2541979%2C1159763";
 */
 
 @font-face {
@@ -69,4 +69,7 @@
 }
 .flaticon-paper:before {
   content: '\f10a';
+}
+.flaticon-share:before {
+  content: '\f10b';
 }
