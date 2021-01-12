@@ -2,7 +2,7 @@
 * Fluency Style
 */
 
-:root{
+:root {
   --header-height: 54px;
   --footer-height: 8rem;
 }
@@ -16,7 +16,7 @@ body {
 .button {
   border-radius: 2px;
   background-color: var(--theme-body-background);
-  border-color: var(--theme-text-subtitle);
+  border-color: var(--theme-text-subtle);
   border-width: 1px;
   color: var(--theme-text);
   cursor: pointer;
@@ -146,7 +146,7 @@ body {
         }
       }
 
-      li:first-of-type .nav-link{
+      li:first-of-type .nav-link {
         padding-left: 0;
       }
     }
@@ -226,7 +226,7 @@ body {
 
 #main {
   position: relative;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height))
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
 #main.list {
@@ -273,7 +273,7 @@ body {
         font-size: 13px;
         text-decoration: none;
         a {
-          color: var(--theme-text-subtitle);
+          color: var(--theme-text-subtle);
         }
         a:visited {
           color: inherit;
@@ -559,7 +559,7 @@ body {
       display: inline-flex;
     }
     a {
-      color: var(--theme-text-subtitle);
+      color: var(--theme-text-subtle);
       margin-right: 1em;
       i {
         font-size: 120%;
@@ -880,7 +880,7 @@ li.hashed-tag {
   &:before {
     content: '#';
     opacity: 0.7;
-    color: var(--theme-text-subtitle);
+    color: var(--theme-text-subtle);
     margin-right: 2px;
     padding: 2px 3px 2px 5px;
     border-radius: 2px;

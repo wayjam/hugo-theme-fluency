@@ -14,7 +14,7 @@ body {
 .button {
   border-radius: 2px;
   background-color: var(--theme-body-background);
-  border-color: var(--theme-text-subtitle);
+  border-color: var(--theme-text-subtle);
   border-width: 1px;
   color: var(--theme-text);
   cursor: pointer;
@@ -211,7 +211,7 @@ body {
     font-size: 13px;
     text-decoration: none; }
     #main.list .list .tags li a {
-      color: var(--theme-text-subtitle); }
+      color: var(--theme-text-subtle); }
     #main.list .list .tags li a:visited {
       color: inherit; }
 
@@ -440,7 +440,7 @@ body {
     .meta .social-share > * {
       display: inline-flex; }
     .meta .social-share a {
-      color: var(--theme-text-subtitle);
+      color: var(--theme-text-subtle);
       margin-right: 1em; }
       .meta .social-share a i {
         font-size: 120%; }
@@ -665,7 +665,7 @@ li.hashed-tag {
   li.hashed-tag:before {
     content: '#';
     opacity: 0.7;
-    color: var(--theme-text-subtitle);
+    color: var(--theme-text-subtle);
     margin-right: 2px;
     padding: 2px 3px 2px 5px;
     border-radius: 2px;
