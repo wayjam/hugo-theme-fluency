@@ -453,7 +453,7 @@ body {
       display: inline;
       margin-right: 5px; }
       .meta ul.tags li a {
-        color: var(--theme-primary-base); }
+        color: var(--theme-text-subtle); }
 
 .highlight {
   display: block; }
