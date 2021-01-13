@@ -35,15 +35,11 @@
   {{ end }}
   {{ end }}
 
-  {{ if .Site.Params.twitter }}
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@{{ .Site.Params.twitter }}" />
-  <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}" />
   <meta name="twitter:title" content="{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}" />
   <meta name="twitter:description" content="{{ .Description | default .Summary }}|{{ .Site.Params.Description }}" />
   <meta name="twitter:image:src" content="" />
   <meta name="twitter:domain" content="{{ .Permalink }}" />
-  {{ end }}
 
   <title>
     {{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}

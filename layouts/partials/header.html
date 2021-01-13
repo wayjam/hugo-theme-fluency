@@ -17,7 +17,7 @@ if (window.localStorage.getItem('theme') === 'dark') {
           {{ $currentPage := . }}
           {{ range .Site.Menus.main }}
             <li class="nav-bar-item{{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }} active{{ end }}">
-              <a class="nav-link navbar-button" href="{{ .URL | relLangURL }}" title="{{ .Title }}">
+              <a class="nav-link navbar-button" href="{{ .URL | relLangURL }}" title="{{ or .Title .Name }}">
                 <span>{{ .Name | lower }}</span>
               </a>
             </li>

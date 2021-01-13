@@ -1,18 +1,15 @@
 <footer id="footer">
   <div class="container has-padding is-flex">
     <ul class="links">
+      {{ range .Site.Menus.footer }}
+      <li>
+        {{ $targetURL := .URL | relURL }}
+        <a {{ if hasPrefix $targetURL "http" }}rel="nofollow" target="_blank"{{ end }} href="{{ .URL | relURL }}" title="{{ or .Title .Name }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
       <li>
         <a class="nav-link navbar-button" href="{{ .Site.RSSLink }}" type="application/rss+xml">RSS</a>
       </li>
-      {{ with .Site.Params.twitter }}
-      <li>
-        <a rel="nofollow" target="_blank" href="https://twitter.com/{{ . }}" title="Twitter">Twitter</a>
-      </li>
-      {{ end }} {{ with .Site.Params.github }}
-      <li>
-        <a rel="nofollow" target="_blank" href="https://github.com/{{ .  }}" title="Github">Github</a>
-      </li>
-      {{ end }}
       <li>
         <a
           rel="nofollow"

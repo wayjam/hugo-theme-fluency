@@ -30,9 +30,6 @@ taxonomies:
 params:
   author: Hugo Author
   
-  # footer
-  twitter: gohugoio
-  github: gohugoio
   # copyright: "© 2021 <a href='https://github.com/wayjam/hugo-theme-fluency'>Hugo Theme Fluency</a>."
 
   # main section will list at index page
@@ -79,6 +76,13 @@ menu:
       name: about
       url: about/
       weight: 4
+  footer:
+    - identifier: twitter
+      url: "https://twitter.com/gohugoio"
+      name: Twitter
+    - identifier: github
+      url: "https://github.com/gohugoio"
+      name: Github
 
 # Privacy configurations: https://gohugo.io/about/hugo-and-gdpr/
 privacy:
