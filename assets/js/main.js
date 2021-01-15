@@ -83,6 +83,6 @@ function codeHelper() {
   }
 
   // Add copy button to code blocks
-  const highlightBlocks = document.querySelectorAll('.post.single .highlight')
+  const highlightBlocks = document.querySelectorAll('.post.single div.highlight')
   Array.prototype.forEach.call(highlightBlocks, addCopyButton)
 }
