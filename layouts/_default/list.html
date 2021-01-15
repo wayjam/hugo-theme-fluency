@@ -5,7 +5,7 @@
     <ul class="list">
       {{ $pageSize := 10 }}
       {{ if and site.Params.pageSize site.Params.pageSize.list }}
-        {{ $pageSize := site.Params.pageSize.list }}
+        {{ $pageSize = site.Params.pageSize.list }}
       {{ end}}
       {{ range (.Paginator $pageSize).Pages }}
       <li class="post">

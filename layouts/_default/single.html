@@ -10,7 +10,7 @@
         {{ with .Type }}
           <span>{{ .}} </span>
         {{ end }}
-        {{ with (partial "author.html" . ) }}
+        {{ with (partial "utils/author.html" . ) }}
           <span>{{.}}</span>
         {{end}}
         {{ if $enable_comment }}

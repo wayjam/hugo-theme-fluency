@@ -411,6 +411,15 @@ body {
     h6 {
       font-size: 1rem;
     }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      line-height: 1.3;
+      margin-bottom: 12px;
+      margin-top: 10px;
+    }
     blockquote {
       padding: 0.5rem 1rem;
       border-left: 0.25rem solid #eceeef;
@@ -467,15 +476,22 @@ body {
         border-bottom: 0;
         border-style: solid;
       }
-
       td p:first-child,
       th p:first-child {
         margin-top: 0;
       }
     }
     img {
+      border: 0;
+    }
+    img,
+    video {
       max-width: 100%;
-      padding: 2px;
+      height: auto;
+      display: inline-block;
+    }
+    td img {
+      max-width: none;
     }
     b,
     strong {
@@ -484,6 +500,27 @@ body {
     small,
     figcaption {
       font-size: 90%;
+    }
+    figure {
+      display: block;
+      overflow: hidden;
+      border: 1px solid transparent;
+      img {
+        display: block;
+        max-width: none;
+        touch-action: none;
+        transition: opacity 0.5s ease-in 0.3s;
+        margin-bottom: 0.5rem;
+        line-height: 1;
+      }
+      figcaption {
+        font-size: 90%;
+        color: #6c757d;
+        * {
+          font-size: 1rem;
+          font-weight: 400 !important;
+        }
+      }
     }
   }
 }
@@ -499,6 +536,7 @@ body {
   .post-info {
     color: var(--theme-text-subtle);
     font-size: 0.875rem;
+    margin-bottom: 1.5em;
     & > *:not(:last-child):after {
       padding-left: 5px;
       padding-right: 5px;
@@ -706,7 +744,6 @@ body {
       padding: 1.2em 32px 1.2em 24px;
       background-color: var(--theme-background);
       border-left: 8px solid transparent;
-
       border-radius: 1%;
 
       &:hover {
@@ -755,11 +792,24 @@ body {
           content: '\2192';
         }
       }
-      .date {
-        float: right;
+      .right {
         font-size: 0.8125rem;
         font-weight: 400;
         font-style: italic;
+        float: right;
+
+      }
+      .section {
+        a {
+          color: var(--theme-text);
+          &:hover {
+            color: var(--them-primary-hover);
+          }
+        }
+        &:after {
+          content: "/";
+          margin-left: 4px;
+        }
       }
 
       &:after {
@@ -815,8 +865,7 @@ body {
     font-size: 2rem;
     align-items: center;
   }
-  .listing {
-  }
+
   .archive-year {
     display: flex;
     padding: 1rem 0;
@@ -857,16 +906,15 @@ body {
       font-weight: 400;
       border-radius: 4px;
       border-left: 4px solid transparent;
-      color: var(--theme-text);
+      color: var(--theme-primary-dark);
       &:hover {
         background-color: var(--theme-background);
-        border-color: var(--theme-primary-base);
+        border-color: var(--theme-primary-hover);
         text-decoration: none;
       }
-      &:hover,
       &:visited,
       &:active {
-        color: inherit;
+        color: var(--theme-primary-active);
       }
     }
   }

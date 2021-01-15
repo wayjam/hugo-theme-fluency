@@ -5,6 +5,10 @@
     {{ if and site.Params.pageSize site.Params.pageSize.index }}
       {{ $pageSize := site.Params.pageSize.index }}
     {{ end}}
+
+    {{ $showSection := false }}
+    {{ if gt (len site.Params.mainSections) 1 }} {{ $showSection = true }} {{ end}}
+
     {{ $paginator := .Paginate (where site.RegularPages "Section" "in" site.Params.mainSections) $pageSize }}
     <div class="article-list">
       {{ range $paginator.Pages }}
@@ -18,10 +22,14 @@
             <span class="hellip">&hellip;</span>
           {{ end }}
         </div>
+ 
         <a class="readmore" href="{{ .Permalink }}">
           <span>READ MORE</span>
         </a>
-        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}" class="date">{{ .Date.Format "January 02, 2006" }}</time>
+        <div class="right">
+          {{ if $showSection }}<span class="section"><a href="{{ .Section | relURL }}">{{ .Section }}</a></span>{{ end}}
+          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}" class="date">{{ .Date.Format "January 02, 2006" }}</time>
+        </div>
       </article>
       {{ end }}
     </div>

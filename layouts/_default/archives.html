@@ -5,7 +5,7 @@
    <div class="listing">
       {{ $pageSize := 20 }}
       {{ if and site.Params.pageSize site.Params.pageSize.archives }}
-        {{ $pageSize := site.Params.pageSize.archives }}
+        {{ $pageSize = site.Params.pageSize.archives }}
       {{ end}}
       {{ $paginator := .Paginate (where site.RegularPages "Section" "in" site.Params.mainSections) $pageSize }}
       {{ if $paginator }}
