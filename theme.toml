@@ -5,7 +5,7 @@ description = "A Hugo theme for writers and bloggers."
 homepage = "https://github.com/wayjam/hugo-theme-fluency"
 tags = ["blog", "fluent", "clean", "simple", "light", "dark" ,"writing", "syntax highlighting", "archives"]
 features = ["blog", "responsive", "social media", "archives"]
-min_version = "0.41"
+min_version = "0.76"
 
 [author]
 	name = "WayJam So"
