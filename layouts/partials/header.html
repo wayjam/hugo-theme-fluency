@@ -28,7 +28,9 @@ if (window.localStorage.getItem('theme') === 'dark') {
         </ul>
       </nav>
       <div class="theme-selector">
-        <button class="button is-text" id="theme-selector-button" title="toggle theme"><span>light mode</span></button>
+        <button class="button is-text" id="theme-selector-button" title="toggle theme">
+          <span class="label icon">{{ partial "utils/icons" "contrast-sharp" }}</span>
+        </button>
       </div>
     </div>
     <div class="container has-padding">

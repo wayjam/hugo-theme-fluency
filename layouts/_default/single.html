@@ -5,17 +5,17 @@
     <div class="article-card post single">
       <h1 class="title">{{ .Title }}</h1>
       <div class="post-info">
-        <span><i class="flaticon-schedule"></i><time datetime={{ .Date.Format "2006-01-02T15:04:05Z0700" }} class="date">{{ .Date.Format "January 02, 2006" }}</time></span>
-        <span><i class="flaticon-time"></i>{{ .ReadingTime | default (printf "%s mins" .ReadingTime) }} min read</span>
+        <span>{{ partial "utils/icons" "calendar-sharp" }}<time datetime={{ .Date.Format "2006-01-02T15:04:05Z0700" }} class="date">{{ .Date.Format "January 02, 2006" }}</time></span>
+        <span>{{ partial "utils/icons" "time-sharp" }}{{ .ReadingTime | default (printf "%s mins" .ReadingTime) }} min read</span>
+        {{ with (partial "utils/author" . ) }}
+          <span>{{ partial "utils/icons" "person-sharp" }}{{.}}</span>
+        {{end}}
         {{ with .Type }}
           <span>{{ .}} </span>
         {{ end }}
-        {{ with (partial "utils/author.html" . ) }}
-          <span>{{.}}</span>
-        {{end}}
         {{ if $enable_comment }}
           <a href="#comments">
-            <i class="flaticon-chat"></i>
+            {{ partial "utils/iconhtml" "chatbox-ellipses-sharp" }}
           </a>
         {{ end }}
       </div>

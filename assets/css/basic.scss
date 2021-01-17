@@ -360,3 +360,14 @@ summary {
   background-color: var(--theme-body-background);
   outline-color: var(--theme-text);
 }
+
+.ionicon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.theme-dark .ionicon {
+  fill: currentColor;
+}

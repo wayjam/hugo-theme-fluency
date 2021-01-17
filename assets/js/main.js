@@ -2,9 +2,12 @@
  * Fluency
  */
 
+ let FluencyCopyIcon = "";
+
 ; (function () {
   const body = document.body
   const themeSelectorBtn = document.getElementById('theme-selector-button')
+  FluencyCopyIcon = (window.FluencyCopyIcon || FluencyCopyIcon).trim();
 
   function toggleTheme() {
     body.classList.toggle('theme-light')
@@ -14,10 +17,10 @@
   themeSelectorBtn.addEventListener('click', function () {
     toggleTheme()
     if (body.classList.contains('theme-dark')) {
-      this.querySelector('span').textContent = 'light mode'
+      this.querySelector('span').className = 'light'
       window.localStorage.setItem('theme', 'dark')
     } else {
-      this.querySelector('span').textContent = 'dark mode'
+      this.querySelector('span').className = 'dark'
       window.localStorage.setItem('theme', 'light')
     }
   })
@@ -35,7 +38,7 @@ function codeHelper() {
   function flashCopyMessage(el, msg) {
     el.textContent = msg
     setTimeout(function () {
-      el.innerHTML = '<i class="flaticon-copy"></i>'
+      el.innerHTML = `${FluencyCopyIcon}Copy`
     }, 1000)
   }
 
@@ -61,7 +64,7 @@ function codeHelper() {
     const copyBtn = document.createElement('button')
     copyBtn.className = 'action'
     copyBtn.setAttribute("aria-label", "copy")
-    copyBtn.innerHTML = '<i class="flaticon-copy"></i>'
+    copyBtn.innerHTML = `${FluencyCopyIcon}Copy`
 
     helper.appendChild(codeLang)
     helper.appendChild(copyBtn)

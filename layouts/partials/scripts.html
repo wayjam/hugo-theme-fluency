@@ -1,3 +1,7 @@
+<script>
+    window.FluencyCopyIcon = '{{ partial "utils/icons" "copy" }}'
+</script>
+
 {{ $script := resources.Get "js/main.js" | minify | fingerprint }}
 <script defer src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous" async></script>
 

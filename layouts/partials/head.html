@@ -77,9 +77,8 @@
   {{ $base_style := resources.Get "css/basic.scss" | toCSS }}
   {{ $main_style := resources.Get "css/main.scss" | toCSS }}
   {{ $highlight_style := resources.Get "css/highlight.css" }}
-  {{ $icon_style := resources.Get "css/flaticon.css" }}
 
-  {{ $CSS := slice $base_style $main_style $highlight_style $icon_style | resources.Concat "style.css" }}
+  {{ $CSS := slice $base_style $main_style $highlight_style | resources.Concat "style.css" }}
 
   {{ if not .Site.IsServer }}
     {{ $CSS := $CSS | minify | fingerprint }}

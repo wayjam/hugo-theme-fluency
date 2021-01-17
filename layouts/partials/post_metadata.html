@@ -1,12 +1,12 @@
 <div class="meta article-card">
     <div class="row">
-      <span class="label"><i class="flaticon-schedule"></i>Published at </span><time>{{ .PublishDate.Local.Format "2006-01-02 15:04 MST" }}</time>
+      <span class="label">{{ partial "utils/icons" "calendar-sharp" }}Published at </span><time>{{ .PublishDate.Local.Format "2006-01-02 15:04 MST" }}</time>
       {{ if ne .Lastmod .PublishDate }}(last updated at <time>{{ .LastMod.Local.Format "2006-01-02 15:04 MST" }}</time>){{ end }}
     </div>
 
     {{ with .Params.tags }}
       <div class="row">
-        <span class="label"><i class="flaticon-tag"></i>Tagged with</span>
+        <span class="label">{{ partial "utils/icons" "pricetags-sharp" }}Tagged with</span>
         <ul class="tags">
         {{ range . }}
           <li class="hashed-tag"><a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
@@ -16,7 +16,7 @@
     {{ end }}
 
     <div class="row social-share">
-      <span class="label"><i class="flaticon-share"></i>Share with</span>
+      <span class="label">{{ partial "utils/icons" "share-sharp" }}Share with</span>
       {{ $tag_list := "" }}
       {{ with .Params.Tags }}
         {{ $tag_list = delimit . "," }}
@@ -27,7 +27,7 @@
         rel="noopener noreferrer"
         aria-label="share {{ .Title | plainify }} on twitter"
         href="https://twitter.com/intent/tweet/?text={{ .Title }}&amp;url={{ .Permalink }}&amp;hashtags={{ $tag_list }}">
-        <i class="flaticon-twitter"></i>
+        {{ partial "utils/icons" "logo-twitter" }}
       </a>
       <a
         target="_blank"
@@ -35,7 +35,7 @@
         rel="noopener noreferrer"
         aria-label="share {{ .Title | plainify }} on reddit"
         href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}">
-        <i class="flaticon-reddit"></i>
+        {{ partial "utils/icons" "logo-reddit" }}
       </a>
       <a
         target="_blank"
@@ -43,7 +43,7 @@
         rel="noopener noreferrer"
         aria-label="share {{ .Title | plainify }} on facebook"
         href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}">
-        <i class="flaticon-facebook"></i>
+        {{ partial "utils/icons" "logo-facebook" }}
       </a>
     </div>
 

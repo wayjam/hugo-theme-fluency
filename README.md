@@ -5,7 +5,7 @@
 ![GitHub](https://img.shields.io/github/license/wayjam/hugo-theme-fluency)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/wayjam/hugo-theme-fluency)
 
-A fluent theme for hugo.
+A fluent theme for hugo. You may find screenshot at `images/`.
 
 ## Installation
 
@@ -30,6 +30,15 @@ git submodule update --rebase --remote
 
 Refer to [Getting Started](https://github.com/wayjam/hugo-theme-fluency/wiki/Getting-Started).
 
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## References
+
+- IonIcons: <https://github.com/ionic-team/ionicons/>
 ## License
 
 Released under the [MIT License](https://github.com/wayjam/hugo-theme-fluency/blob/master/LICENSE).

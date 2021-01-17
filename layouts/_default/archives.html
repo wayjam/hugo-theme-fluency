@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main id="main" class="archives">
   <div class="container has-padding">
-   <h2><i class="flaticon-files"></i>{{ .Title }}</h2>
+   <h2>{{ partial "utils/icons" "archive" }}{{ .Title }}</h2>
    <div class="listing">
       {{ $pageSize := 20 }}
       {{ if and site.Params.pageSize site.Params.pageSize.archives }}

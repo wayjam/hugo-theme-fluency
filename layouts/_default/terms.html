@@ -2,9 +2,9 @@
 <section id="main" class="terms">
   <div class="container has-padding">
     {{ if eq .Title "Tags" }}
-      <h2><i class="flaticon-tag"></i>{{ .Title }}</h2>
+      <h2>{{ partial "utils/icons" "pricetags-sharp" }}{{ .Title }}</h2>
     {{ else }}
-      <h2><i class="flaticon-paper"></i>{{ .Title }}</h2>
+      <h2>{{ partial "utils/icons" "search-sharp" }}{{ .Title }}</h2>
     {{ end }}
     <ul class="term-columns">
       {{ range .Data.Terms.Alphabetical }} {{ if ne .Page.Title "" }}
