@@ -10,13 +10,16 @@
         {{ with (partial "utils/author" . ) }}
           <span>{{ partial "utils/icons" "person-sharp" }}{{.}}</span>
         {{end}}
+        {{ if $enable_comment }}
+          <span>
+            {{ partial "utils/icons" "chatbox-ellipses-sharp" }}
+            <a href="#comments">
+              comments
+            </a>
+          </span>
+        {{ end }}
         {{ with .Type }}
           <span>{{ .}} </span>
-        {{ end }}
-        {{ if $enable_comment }}
-          <a href="#comments">
-            {{ partial "utils/iconhtml" "chatbox-ellipses-sharp" }}
-          </a>
         {{ end }}
       </div>
       <article class="post-entry content">
