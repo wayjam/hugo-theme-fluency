@@ -531,7 +531,6 @@ body {
       .highlight .code-helper button:hover {
         background-color: var(--theme-code-highlight-background); }
       .highlight .code-helper button svg {
-        fill: none;
         width: 16px;
         height: 16px;
         margin-right: 4px; }

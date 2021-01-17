@@ -366,6 +366,12 @@ summary {
   height: 24px;
   stroke: currentColor;
   fill: currentColor;
+  .ionicon-fill-none {
+    fill: none;
+  }
+  .ionicon-stroke-width {
+    stroke-width: 1em;
+  }
 }
 
 .theme-dark .ionicon {
