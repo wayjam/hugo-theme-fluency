@@ -60,6 +60,7 @@ function codeHelper() {
 
     const copyBtn = document.createElement('button')
     copyBtn.className = 'action'
+    copyBtn.setAttribute("aria-label", "copy")
     copyBtn.innerHTML = '<i class="flaticon-copy"></i>'
 
     helper.appendChild(codeLang)
