@@ -1,5 +1,6 @@
 {{ $pag := .Paginator }}
-{{ if gt $pag.TotalPages 1 }}
+{{ if $pag }}
+{{ if gt $pag.TotalPages 1}}  
 <div class="pagination">
   <ul class="pagination-container">
     {{ if $pag.HasPrev }}
@@ -42,4 +43,5 @@
     {{ end }}
   </ul>
 </div>
+{{ end }}
 {{ end }}
