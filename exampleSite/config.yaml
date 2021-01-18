@@ -57,7 +57,7 @@ params:
     this is your comment
   
   # refer to https://gohugo.io/content-management/formats/
-  enableMathJax: true
+  mathRender: true
 
 menu:
   main:

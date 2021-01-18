@@ -5,8 +5,8 @@
 {{ $script := resources.Get "js/main.js" | minify | fingerprint }}
 <script defer src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous" async></script>
 
-{{ if and .Site.Params.enableMathJax .IsPage }}
-<script defer src="//cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{{ if and .Site.Params.mathRender .IsPage }}
+    {{ partialCached "utils/math.html" . }}
 {{ end }}
 
 <noscript>
