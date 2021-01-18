@@ -83,6 +83,13 @@ body {
 
   .navbar-brand {
     display: flex;
+    &::after {
+      display: inline-block;
+      content: ' ';
+      border-right: 2px solid var(--theme-text-subtle);
+      color: var(--theme-text);
+      margin: 15px 1.5em 15px 1.5em;
+    }
   }
 
   a.logo {
@@ -99,13 +106,6 @@ body {
       font-size: 1.25rem;
       font-weight: 600;
       border-bottom: 2px solid transparent;
-    }
-
-    &::after {
-      display: inline-block;
-      content: '|';
-      padding: 0 10px;
-      color: var(--theme-text);
     }
   }
 

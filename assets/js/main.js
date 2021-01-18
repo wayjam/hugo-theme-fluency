@@ -54,6 +54,10 @@ function codeHelper() {
   function addCopyButton(containerEl) {
     const codeBlock = containerEl.querySelector('.chroma code[data-lang]')
 
+    if (!codeBlock) {
+      return
+    }
+
     const helper = document.createElement('div')
     helper.className = 'code-helper'
 

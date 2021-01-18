@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $enable_comment := and (not (.Site.Params.disableComment | default false)) (not (in (.Site.Params.disableCommentByType | default "[]string") .Type)) }}
+{{ $enableComment := (partial "utils/comment_is_enabled" . ) }}
 <main id="main">
   <div class="container has-padding">
     <div class="article-card post single">
@@ -10,7 +10,7 @@
         {{ with (partial "utils/author" . ) }}
           <span>{{ partial "utils/icons" "person-sharp" }}{{.}}</span>
         {{end}}
-        {{ if $enable_comment }}
+        {{ if $enableComment }}
           <span>
             {{ partial "utils/icons" "chatbox-ellipses-sharp" }}
             <a href="#comments">
@@ -19,11 +19,11 @@
           </span>
         {{ end }}
         {{ with .Type }}
-          <span>{{ .}} </span>
+          <span>{{ . }} </span>
         {{ end }}
       </div>
       <article class="post-entry content">
-        {{.Content}}
+        {{ .Content }}
       </article>
     </div>
 
@@ -31,7 +31,7 @@
       {{ partial "post_metadata.html" . }}
     {{ end }}
 
-    {{ if $enable_comment }}
+    {{ if $enableComment }}
       <div id="comments" class="article-card">
         {{ partial "comments.html" . }}
       </div>

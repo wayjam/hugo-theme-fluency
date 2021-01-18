@@ -9,7 +9,7 @@
   {{ with .Description }}
   <meta name="description" content="{{ . }}" />
   {{ end }}
-  <meta name="keywords" content="{{ if .Keywords }}{{ range.Keywords }}{{ . }}, {{ end }}{{else if isset .Params "tags" }}{{ range.Params.tags }}{{ . }}, {{ end }}{{ end }}">
+  <meta name="keywords" content="{{ if .Keywords }}{{ range.Keywords }}{{ . }}, {{ end }}{{ else if isset .Params "tags" }}{{ range.Params.tags }}{{ . }}, {{ end }}{{ end }}">
 
   <!-- open graph -->
   <meta property="og:type" content="article" />
