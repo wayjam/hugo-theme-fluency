@@ -5,8 +5,8 @@
   <ul class="pagination-container">
     {{ if $pag.HasPrev }}
       <li class="page-item to-left">
-        <a href="{{ $pag.Prev.URL }}" class="page-link" aria-label="Previous">
-          <span aria-hidden="true">&#xab; Prev</span>
+        <a href="{{ $pag.Prev.URL }}" class="page-link" aria-label="{{ i18n "previous" }}">
+          <span aria-hidden="true">&#xab; {{ i18n "previous" }}</span>
         </a>
       </li>
     {{ end }}
@@ -36,8 +36,8 @@
 
     {{ if $pag.HasNext }}
     <li class="page-item to-right">
-      <a href="{{ $pag.Next.URL }}" class="page-link" aria-label="Next">
-        <span aria-hidden="true">Next &#xbb;</span>
+      <a href="{{ $pag.Next.URL }}" class="page-link" aria-label="{{ i18n "next"}}">
+        <span aria-hidden="true">{{ i18n "next"}} &#xbb;</span>
       </a>
     </li>
     {{ end }}

@@ -1,5 +1,6 @@
 baseURL: https://example.com
 languageCode: en-us
+defaultContentLanguage: en
 title: Fluency
 theme: fluency
 enableRobotsTXT: true
@@ -39,7 +40,7 @@ params:
   
   # set number of post of specify type of content
   pageSize:
-    index: 5
+    index: 1
     list: 10
     terms: 60
     archives: 20

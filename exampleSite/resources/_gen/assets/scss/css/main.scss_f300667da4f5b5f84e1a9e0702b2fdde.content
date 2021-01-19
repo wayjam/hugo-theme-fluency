@@ -625,7 +625,8 @@ body {
       letter-spacing: 0;
       text-transform: uppercase; }
       #main.index-page .article-list .post .readmore:after {
-        content: '\2192'; }
+        content: '\2192';
+        margin-left: 2px; }
     #main.index-page .article-list .post .right {
       font-size: 0.8125rem;
       font-weight: 400;

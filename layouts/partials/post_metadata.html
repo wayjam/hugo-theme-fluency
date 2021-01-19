@@ -1,12 +1,12 @@
 <div class="meta article-card">
     <div class="row">
-      <span class="label">{{ partial "utils/icons" "calendar-sharp" }}Published at </span><time>{{ .PublishDate.Local.Format "2006-01-02 15:04 MST" }}</time>
-      {{ if ne .Lastmod .PublishDate }}(last updated at <time>{{ .LastMod.Local.Format "2006-01-02 15:04 MST" }}</time>){{ end }}
+      <span class="label">{{ partial "utils/icons" "calendar-sharp" }}{{ i18n "publishedAt" }}</span><time>{{ .PublishDate.Local.Format "2006-01-02 15:04 MST" }}</time>
+      {{ if ne .Lastmod .PublishDate }}({{ i18n "updatedAt" }}<time>{{ .LastMod.Local.Format "2006-01-02 15:04 MST" }}</time>){{ end }}
     </div>
 
     {{ with .Params.tags }}
       <div class="row">
-        <span class="label">{{ partial "utils/icons" "pricetags-sharp" }}Tagged with</span>
+        <span class="label">{{ partial "utils/icons" "pricetags-sharp" }}{{ i18n "taggedWith" }}</span>
         <ul class="tags">
         {{ range . }}
           <li class="hashed-tag"><a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
@@ -16,7 +16,7 @@
     {{ end }}
 
     <div class="row social-share">
-      <span class="label">{{ partial "utils/icons" "share-sharp" }}Share with</span>
+      <span class="label">{{ partial "utils/icons" "share-sharp" }}{{ i18n "shareWith" }}</span>
       {{ $tag_list := "" }}
       {{ with .Params.Tags }}
         {{ $tag_list = delimit . "," }}

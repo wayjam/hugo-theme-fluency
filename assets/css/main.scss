@@ -801,6 +801,7 @@ body {
         text-transform: uppercase;
         &:after {
           content: '\2192';
+          margin-left: 2px;
         }
       }
       .right {

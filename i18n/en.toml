@@ -1,0 +1,39 @@
+[home]
+other = "Home"
+
+[tag]
+other = "tags"
+
+[archive]
+other = "archives"
+
+[toggleTheme]
+other = "toggle theme"
+
+[next]
+other = "Next"
+
+[previous]
+other = "Previous"
+
+[readMore]
+other = "READ MORE"
+
+[readingTime]
+one = "a min to read"
+other = "{{ .Count }} mins to read"
+
+[comment]
+other = "comment"
+
+[publishedAt]
+other = "Published At"
+
+[updatedAt]
+other = "Updated At"
+
+[taggedWith]
+other = "Tagged with"
+
+[shareWith]
+other = "Share with"

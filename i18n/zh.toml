@@ -1,0 +1,38 @@
+[home]
+other = "首页"
+
+[tag]
+other = "标签"
+
+[archive]
+other = "归档"
+
+[toggleTheme]
+other = "切换主题"
+
+[next]
+other = "下一页"
+
+[previous]
+other = "上一页"
+
+[readMore]
+other = "阅读更多"
+
+[readingTime]
+other = "预计阅读 {{ .Count }} 分钟"
+
+[comment]
+other = "评论"
+
+[publishedAt]
+other = "发布于"
+
+[updatedAt]
+other = "修改于"
+
+[taggedWith]
+other = "标记为"
+
+[shareWith]
+other = "分享在"
