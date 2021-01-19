@@ -4,8 +4,9 @@
 [![Hugo](https://img.shields.io/badge/Hugo-%5E0.76-orange)](https://gohugo.io/)
 ![GitHub](https://img.shields.io/github/license/wayjam/hugo-theme-fluency)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/wayjam/hugo-theme-fluency)
+![Netlify](https://img.shields.io/netlify/a9bbaec4-cbb1-4cf4-98c7-b7e32b9fe520)
 
-A fluent theme for hugo. You may find screenshot at `images/`.
+A fluent theme for hugo. You may find screenshot at `images/`. And Preview this theme at [live demo](https://hugo-fluency-demo.netlify.app/).
 
 ## Installation
 
