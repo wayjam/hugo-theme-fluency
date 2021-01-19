@@ -38,7 +38,7 @@ function codeHelper() {
   function flashCopyMessage(el, msg) {
     el.textContent = msg
     setTimeout(function () {
-      el.innerHTML = `${FluencyCopyIcon}Copy`
+      el.innerHTML = `${FluencyCopyIcon}`
     }, 1000)
   }
 
@@ -68,7 +68,7 @@ function codeHelper() {
     const copyBtn = document.createElement('button')
     copyBtn.className = 'action'
     copyBtn.setAttribute("aria-label", "copy")
-    copyBtn.innerHTML = `${FluencyCopyIcon}Copy`
+    copyBtn.innerHTML = `${FluencyCopyIcon}`
 
     helper.appendChild(codeLang)
     helper.appendChild(copyBtn)
