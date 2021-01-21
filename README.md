@@ -6,7 +6,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/wayjam/hugo-theme-fluency)
 ![Netlify](https://img.shields.io/netlify/a9bbaec4-cbb1-4cf4-98c7-b7e32b9fe520)
 
-A fluent theme for hugo. You may find screenshot at `images/`. And Preview this theme at [live demo](https://hugo-fluency-demo.netlify.app/).
+A fluent theme for hugo. You may find screenshot at `images/`. And preview this theme at a [live demo](https://hugo-fluency-demo.netlify.app/) which hosted on netlify.
 
 ## Installation
 

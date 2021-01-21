@@ -73,7 +73,7 @@ body {
       content: ' ';
       border-right: 2px solid var(--theme-text-subtle);
       color: var(--theme-text);
-      margin: 15px 1.5em 15px 1.5em; }
+      margin: 17px 1.5em; }
   #header a.logo {
     height: 100%;
     display: flex;

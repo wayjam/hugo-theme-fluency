@@ -17,6 +17,9 @@ ignoreErrors:
 # googleAnalytics: UA-XXXXXXXXX-X
 # disqusShortName: hugo
 
+minify:
+  disableSVG: true
+
 markup:
   goldmark:
     renderer:
