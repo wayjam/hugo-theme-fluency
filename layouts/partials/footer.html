@@ -23,11 +23,11 @@
         <a rel="nofollow" target="_blank" href="https://gohugo.io" title="Built with hugo">Built with Hugo</a>
       </li>
     </ul>
-    <span class="copyright">
+    <div class="copyright">
       {{ with .Site.Params.copyright }}
         {{ .| safeHTML }} {{ else }} &copy; {{ now.Format "2006"}} {{ .Site.Title }}
       {{end}}
-    </span>
+    </div>
   </div>
 </footer>
 

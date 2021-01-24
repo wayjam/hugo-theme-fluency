@@ -2,30 +2,8 @@
  * Fluency
  */
 
- let FluencyCopyIcon = "";
-
-; (function () {
-  const body = document.body
-  const themeSelectorBtn = document.getElementById('theme-selector-button')
-  FluencyCopyIcon = (window.FluencyCopyIcon || FluencyCopyIcon).trim();
-
-  function toggleTheme() {
-    body.classList.toggle('theme-light')
-    body.classList.toggle('theme-dark')
-  }
-
-  themeSelectorBtn.addEventListener('click', function () {
-    toggleTheme()
-    if (body.classList.contains('theme-dark')) {
-      this.querySelector('span').className = 'light'
-      window.localStorage.setItem('theme', 'dark')
-    } else {
-      this.querySelector('span').className = 'dark'
-      window.localStorage.setItem('theme', 'light')
-    }
-  })
-  codeHelper()
-})()
+let FluencyCopyIcon = "";
+const preferDarkScheme = window.matchMedia('(prefers-color-scheme: dark)')
 
 // code helper
 function codeHelper() {
@@ -94,3 +72,36 @@ function codeHelper() {
   const highlightBlocks = document.querySelectorAll('.post.single div.highlight')
   Array.prototype.forEach.call(highlightBlocks, addCopyButton)
 }
+
+// detect system prefered color
+function isDarkMode() {
+  return preferDarkScheme.matches
+}
+
+; (function () {
+  const body = document.body
+  const themeSelectorBtn = document.getElementById('theme-selector-button')
+  const menuToggler = document.getElementById('navbar-toggler')
+  const navbar = document.querySelector('nav.navbar')
+  FluencyCopyIcon = (window.FluencyCopyIcon || FluencyCopyIcon).trim()
+
+  themeSelectorBtn.addEventListener('click', function () {
+    let theme
+    if (isDarkMode()) {
+      body.classList.toggle('theme-light')
+      theme = body.classList.contains("theme-light") ? "light" : "dark"
+    } else {
+      body.classList.toggle('theme-dark')
+      theme = body.classList.contains("theme-dark") ? "dark" : "light"
+    }
+
+    window.localStorage.setItem('theme', theme)
+  })
+
+  menuToggler.addEventListener("click", function () {
+    navbar.classList.toggle('active')
+  })
+
+  codeHelper()
+})()
+

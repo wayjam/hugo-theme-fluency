@@ -1,10 +1,11 @@
 ---
-title: "Placeholder Text"
+title: "Placeholder Content"
 date: "2019-12-17"
 description: "Lorem Ipsum Dolor Si Amet"
 tags: [
     "markdown",
     "text",
+    "images"
 ]
 ---
 
@@ -23,6 +24,8 @@ Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus
 silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria
 tractus malis.
 
+![placeholder-image1](https://via.placeholder.com/1600x800)
+
 1. Comas hunc haec pietate fetum procerum dixit
 2. Post torum vates letum Tiresia
 3. Flumen querellas
@@ -37,6 +40,8 @@ tractus malis.
 
 ## Mane refeci capiebant unda mulcebat
 
+![placeholder-image1](https://via.placeholder.com/400x280)
+
 Victa caducifer, malo vulnere contra
 dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere
 furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. **Faces illo pepulere** tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.
@@ -49,6 +54,8 @@ vulnus haerentia iuste et exercebat, sui et.
 
 Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel **mitis temploque** vocatus, inque alis, *oculos nomen* non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem
 Propoetides **parte**.
+
+![placeholder-image1](https://via.placeholder.com/600x480)
 
 {{< css.inline >}}
 <style>

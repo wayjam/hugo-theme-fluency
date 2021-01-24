@@ -21,14 +21,6 @@
       {{ with .Params.Tags }}
         {{ $tag_list = delimit . "," }}
       {{ end }}
-      <a 
-        target="_blank" 
-        title="share to twitter"
-        rel="noopener noreferrer"
-        aria-label="share {{ .Title | plainify }} on twitter"
-        href="https://twitter.com/intent/tweet/?text={{ .Title }}&amp;url={{ .Permalink }}&amp;hashtags={{ $tag_list }}">
-        {{ partial "utils/icons" "logo-twitter" }}
-      </a>
       <a
         target="_blank"
         title="share to reddit"
@@ -36,6 +28,14 @@
         aria-label="share {{ .Title | plainify }} on reddit"
         href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}">
         {{ partial "utils/icons" "logo-reddit" }}
+      </a>
+      <a
+        target="_blank" 
+        title="share to twitter"
+        rel="noopener noreferrer"
+        aria-label="share {{ .Title | plainify }} on twitter"
+        href="https://twitter.com/intent/tweet/?text={{ .Title }}&amp;url={{ .Permalink }}&amp;hashtags={{ $tag_list }}">
+        {{ partial "utils/icons" "logo-twitter" }}
       </a>
       <a
         target="_blank"

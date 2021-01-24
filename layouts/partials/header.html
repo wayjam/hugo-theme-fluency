@@ -1,12 +1,15 @@
 <script>
-if (window.localStorage.getItem('theme') === 'dark') {
-  document.body.classList.remove('theme-light')
-  document.body.classList.add('theme-dark')
-}
+  const currentTheme = window.localStorage.getItem('theme')
+  if (currentTheme === "dark") {
+    document.body.classList.toggle("theme-dark");
+  } else if (currentTheme == "light") {
+    document.body.classList.toggle("theme-light");
+  }
 </script>
 <header id="header">
   <div class="row">
     <div class="container has-padding nav">
+      <button id="navbar-toggler" class="navbar-button" aria-hidden="true">{{ partial "utils/icons" "menu-sharp" }}</button>
       <div class="navbar-brand">
         <a class="logo navbar-button" href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">
           <span>{{ .Site.Title }}</span>

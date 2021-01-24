@@ -1,11 +1,10 @@
 <head lang="{{ .Site.LanguageCode }}">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta name="color-scheme" content="dark light">
   {{ with .Description }}
   <meta name="description" content="{{ . }}" />
   {{ end }}
@@ -76,9 +75,8 @@
   <!-- Use Hugo Pipes to process the Sass file (convert to CSS, minify, and add a hash) -->
   {{ $base_style := resources.Get "css/basic.scss" | toCSS }}
   {{ $main_style := resources.Get "css/main.scss" | toCSS }}
-  {{ $highlight_style := resources.Get "css/highlight.css" }}
 
-  {{ $CSS := slice $base_style $main_style $highlight_style | resources.Concat "style.css" }}
+  {{ $CSS := slice $base_style $main_style | resources.Concat "style.css" }}
 
   {{ if not .Site.IsServer }}
     {{ $CSS := $CSS | minify | fingerprint }}
