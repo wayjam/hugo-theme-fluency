@@ -787,7 +787,7 @@ li.hashed-tag {
       padding-right: 5px;
       content: '\2022'; }
     .post.single .post-info a {
-      color: var(--theme-text); }
+      color: var(--theme-text-subtle); }
     .post.single .post-info i {
       margin: 0 4px; }
 
@@ -1085,19 +1085,18 @@ li.hashed-tag {
 
 #main.archives .archive-year {
   display: flex;
-  padding: 1rem 0; }
+  padding: 1rem 0;
+  flex-wrap: wrap; }
   #main.archives .archive-year:not(:last-child) {
-    border-bottom: 2px dashed var(--theme-border); }
+    border-bottom: 2px solid var(--theme-border); }
 
 #main.archives .archive-year-header {
-  flex-grow: 1;
-  margin-right: 1.5em; }
+  margin-right: 1rem; }
   #main.archives .archive-year-header sup {
     padding: 0 2px; }
 
 #main.archives .archive-posts {
-  width: 100%;
-  flex-grow: 2; }
+  flex-grow: 1; }
 
 #main.archives .archive-entry .title {
   display: inline-block;
@@ -1111,7 +1110,7 @@ li.hashed-tag {
   display: flex;
   justify-content: space-between;
   vertical-align: middle;
-  padding: 1em 1.5em;
+  padding: 1em 0.5em;
   font-weight: 400;
   border-radius: 4px;
   border-left: 4px solid transparent;

@@ -568,7 +568,7 @@ li.hashed-tag {
       content: '\2022';
     }
     a {
-      color: var(--theme-text);
+      color: var(--theme-text-subtle);
     }
     i {
       margin: 0 4px;
@@ -958,23 +958,22 @@ li.hashed-tag {
   .archive-year {
     display: flex;
     padding: 1rem 0;
+    flex-wrap: wrap;
 
     &:not(:last-child) {
-      border-bottom: 2px dashed var(--theme-border);
+      border-bottom: 2px solid var(--theme-border);
     }
   }
 
   .archive-year-header {
-    flex-grow: 1;
-    margin-right: 1.5em;
+    margin-right: 1rem;
     sup {
       padding: 0 2px;
     }
   }
 
   .archive-posts {
-    width: 100%;
-    flex-grow: 2;
+    flex-grow: 1;
   }
 
   .archive-entry {
@@ -991,7 +990,7 @@ li.hashed-tag {
       display: flex;
       justify-content: space-between;
       vertical-align: middle;
-      padding: 1em 1.5em;
+      padding: 1em 0.5em;
       font-weight: 400;
       border-radius: 4px;
       border-left: 4px solid transparent;
@@ -1076,7 +1075,7 @@ li.hashed-tag {
         display: block;
         margin: 0 auto;
         span {
-          margin-left: -40px;;
+          margin-left: -40px;
         }
       }
     }
