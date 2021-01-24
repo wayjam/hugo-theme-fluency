@@ -7,6 +7,7 @@
 :root {
   --header-height: 54px;
   --footer-height: 8rem;
+  --footer-margin-top: 2rem;
 }
 
 body {
@@ -127,6 +128,8 @@ li.hashed-tag {
 
 @mixin title-with-svg {
   display: flex;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   svg {
     margin-right: 0.2em;
     align-self: center;
@@ -135,7 +138,7 @@ li.hashed-tag {
 
 #header {
   min-width: 320px;
-  margin-bottom: 1.5em;
+  margin-bottom: 1rem;
 
   .row {
     height: 100%;
@@ -306,12 +309,12 @@ li.hashed-tag {
 
 #main {
   position: relative;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  min-height: calc(100vh - var(--header-height) - var(--footer-height) - var(--footer-margin-top));
 }
 
 #footer {
   width: 100%;
-  margin: 2rem 0 0;
+  margin: var(--footer-margin-top) 0 0;
   border-top: 1px solid var(--theme-border-black-high-contrast);
   background-color: var(--theme-secondary-background);
   line-height: var(--footer-height);
@@ -361,7 +364,7 @@ li.hashed-tag {
   display: block;
   font-size: 90%;
   .pagination-container {
-    margin-top: 0;
+    margin: 0 auto;
     padding: 1.875rem 0 1.375rem;
     text-align: right;
     li {
@@ -817,7 +820,6 @@ li.hashed-tag {
 
 #main.index-page {
   .article-list {
-    margin-bottom: 3rem;
     margin-top: -1rem;
 
     &:not(:hover) {
@@ -1047,7 +1049,9 @@ li.hashed-tag {
               display: block;
               width: 100%;
             }
-            &:active span {
+            &:active span,
+            &:hover span,
+            &:visited span {
               border-bottom: 0;
             }
           }
@@ -1071,6 +1075,9 @@ li.hashed-tag {
         padding: 1em 0;
         display: block;
         margin: 0 auto;
+        span {
+          margin-left: -40px;;
+        }
       }
     }
     .theme-selector {
@@ -1107,6 +1114,9 @@ li.hashed-tag {
         float: none !important;
       }
     }
+  }
+  .pagination .pagination-container {
+    text-align: center;
   }
 }
 
