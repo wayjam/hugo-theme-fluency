@@ -866,6 +866,9 @@ li.hashed-tag {
       }
       .content {
         margin-bottom: 1.8rem;
+        p {
+          margin: 0 auto;
+        }
         .hellip {
           cursor: default;
           user-select: none;

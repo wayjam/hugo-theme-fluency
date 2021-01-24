@@ -1014,6 +1014,8 @@ li.hashed-tag {
         color: inherit; }
     #main.index-page .article-list .post .content {
       margin-bottom: 1.8rem; }
+      #main.index-page .article-list .post .content p {
+        margin: 0 auto; }
       #main.index-page .article-list .post .content .hellip {
         cursor: default;
         user-select: none; }
