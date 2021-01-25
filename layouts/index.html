@@ -1,11 +1,7 @@
 {{ define "main" }}
 <main id="main" class="index-page homepage" role="main">
   <div class="container has-padding">
-    {{ $pageSize := 5 }}
-    {{ if and site.Params.pageSize site.Params.pageSize.index }}
-      {{ $pageSize := site.Params.pageSize.index }}
-    {{ end}}
-
+    {{ $pageSize := site.Params.pageSize.index | default 5 }}
     {{ $showSection := false }}
     {{ if gt (len site.Params.mainSections) 1 }} {{ $showSection = true }} {{ end}}
 

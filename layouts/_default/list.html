@@ -3,10 +3,7 @@
   <div class="container has-padding">
     <h2>{{ partial "utils/icons" "list-sharp" }}{{ .Title }}</h2>
     <ul class="list">
-      {{ $pageSize := 10 }}
-      {{ if and site.Params.pageSize site.Params.pageSize.list }}
-        {{ $pageSize = site.Params.pageSize.list }}
-      {{ end}}
+      {{ $pageSize := site.Params.pageSize.list | default 10 }}
       {{ range (.Paginator $pageSize).Pages }}
       <li class="post">
         <a href="{{ .Permalink}}" class="title">{{ .Title }}</a>

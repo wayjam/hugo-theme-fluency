@@ -45,7 +45,6 @@ params:
   pageSize:
     index: 1
     list: 10
-    terms: 60
     archives: 20
   
   # extra info below post
