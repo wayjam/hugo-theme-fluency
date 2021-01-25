@@ -25,7 +25,7 @@
     </ul>
     <div class="copyright">
       {{ with .Site.Params.copyright }}
-        {{ .| safeHTML }} {{ else }} &copy; {{ now.Format "2006"}} {{ .Site.Title }}
+        {{ . | safeHTML }} {{ else }} &copy; {{ now.Format "2006"}} {{ .Site.Title }}
       {{end}}
     </div>
   </div>

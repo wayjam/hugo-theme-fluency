@@ -1,7 +1,7 @@
 name = "fluency"
 license = "MIT"
 licenselink = "https://github.com/wayjam/hugo-theme-fluency/blob/master/LICENSE"
-description = "A Hugo theme for writers and bloggers."
+description = "A fluent Hugo theme for writers and bloggers."
 homepage = "https://github.com/wayjam/hugo-theme-fluency"
 tags = ["blog", "fluent", "clean", "simple", "light", "dark" ,"writing", "syntax highlighting", "archives"]
 features = ["blog", "responsive", "social media", "archives"]

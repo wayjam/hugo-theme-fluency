@@ -9,7 +9,6 @@ pygmentsUseClasses: true # enable theme-defined highlight style
 pygmentsCodefences: true
 hasCJKLanguage: false
 enableEmoji: true
-description: Basic personal site theme styled with minimal tachyons, syntax highlighting, and blog series configuration."
 
 ignoreErrors:
   - error-remote-getjson
@@ -34,10 +33,10 @@ taxonomies:
 
 params:
   author: Hugo Author
+  description: "A fluent Hugo theme for writers and bloggers."
+  # copyright: "© 2021 &nbsp;<a href='https://github.com/wayjam/hugo-theme-fluency'>Hugo Theme Fluency</a>"
 
-  # copyright: "© 2021 <a href='https://github.com/wayjam/hugo-theme-fluency'>Hugo Theme Fluency</a>."
-
-  # main section will list at index page
+  # main section will be listed at index page
   mainSections:
     - posts
   
@@ -61,6 +60,9 @@ params:
   
   # refer to https://gohugo.io/content-management/formats/
   mathRender: true
+
+  # customScript: |
+  #   <script>console.log('hello world')</script>
 
 menu:
   main:

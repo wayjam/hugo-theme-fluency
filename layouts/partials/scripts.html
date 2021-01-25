@@ -12,3 +12,8 @@
 <noscript>
 <style type=text/css>#theme-selector-button{display:none}</style>
 </noscript>
+
+
+{{ with .Site.Params.customScript }}
+    {{ . | safeHTML }}
+{{ end }}
