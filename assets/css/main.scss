@@ -18,23 +18,6 @@ body {
   font-size: 16px;
 }
 
-body:not(.theme-dark) {
-  @include theme-light;
-}
-
-@mixin dark-mode-img {
-  .content img:not([src*='.svg']) {
-    filter: brightness(0.9) contrast(1.1);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body:not(.theme-light) {
-    @include theme-dark;
-    @include dark-mode-img;
-  }
-}
-
 .ionicon {
   width: 24px;
   height: 24px;
@@ -52,15 +35,32 @@ body:not(.theme-dark) {
   fill: currentColor;
 }
 
+@mixin dark-mode-img {
+  .content img:not([src*='.svg']) {
+    filter: brightness(0.9) contrast(1.1);
+  }
+}
+
+@mixin dark-scheme {
+  @include theme-dark;
+  @include dark-mode-img;
+  .ionicon {
+    @include full-fill-icon;
+  }
+}
+
+body:not(.theme-dark),
 .theme-light {
   @include theme-light;
 }
 
 .theme-dark {
-  @include theme-dark;
-  @include dark-mode-img;
-  .ionicon {
-    @include full-fill-icon;
+  @include dark-scheme;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.theme-light) {
+    @include dark-scheme;
   }
 }
 
