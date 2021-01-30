@@ -42,7 +42,7 @@ params:
   
   # set number of post of specify type of content
   pageSize:
-    index: 1
+    index: 5
     list: 10
     archives: 20
   
