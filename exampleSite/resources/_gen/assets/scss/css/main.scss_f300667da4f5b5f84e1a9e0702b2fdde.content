@@ -687,7 +687,8 @@ li.hashed-tag {
   border-collapse: collapse;
   table-layout: auto;
   width: 100%;
-  font-size: 0.875rem; }
+  font-size: 0.875rem;
+  margin-top: 1rem; }
   .post .content table thead {
     text-align: left;
     background-color: var(--theme-table-row-header); }
