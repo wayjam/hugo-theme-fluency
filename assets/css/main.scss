@@ -443,9 +443,10 @@ li.hashed-tag {
       margin-top: 10px;
     }
     blockquote {
-      padding: 0.5rem 1rem;
-      border-left: 0.25rem solid #eceeef;
-      margin: 0 0 1rem;
+      display: block;
+      margin: 1em 0 1.2em;
+      padding: 0 0.8em;
+			border-left: 0.25rem solid var(--theme-border);
       p:first-of-type {
         margin-top: 0;
       }
