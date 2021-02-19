@@ -2,7 +2,7 @@
  * Fluency
  */
 
-let FluencyCopyIcon = "";
+let FluencyCopyIcon = ''
 const preferDarkScheme = window.matchMedia('(prefers-color-scheme: dark)')
 
 // code helper
@@ -45,7 +45,7 @@ function codeHelper() {
 
     const copyBtn = document.createElement('button')
     copyBtn.className = 'action'
-    copyBtn.setAttribute("aria-label", "copy")
+    copyBtn.setAttribute('aria-label', 'copy')
     copyBtn.innerHTML = `${FluencyCopyIcon}`
 
     helper.appendChild(codeLang)
@@ -88,20 +88,21 @@ function isDarkMode() {
   themeSelectorBtn.addEventListener('click', function () {
     let theme
     if (isDarkMode()) {
+      body.classList.remove('theme-dark')
       body.classList.toggle('theme-light')
-      theme = body.classList.contains("theme-light") ? "light" : "dark"
+      theme = body.classList.contains('theme-light') ? 'light' : 'dark'
     } else {
+      body.classList.remove('theme-light')
       body.classList.toggle('theme-dark')
-      theme = body.classList.contains("theme-dark") ? "dark" : "light"
+      theme = body.classList.contains('theme-dark') ? 'dark' : 'light'
     }
 
     window.localStorage.setItem('theme', theme)
   })
 
-  menuToggler.addEventListener("click", function () {
+  menuToggler.addEventListener('click', function () {
     navbar.classList.toggle('active')
   })
 
   codeHelper()
 })()
-
