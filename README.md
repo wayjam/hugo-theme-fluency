@@ -40,6 +40,7 @@ Please make sure to update tests as appropriate.
 ## References
 
 - IonIcons: <https://github.com/ionic-team/ionicons/>
+
 ## License
 
 Released under the [MIT License](https://github.com/wayjam/hugo-theme-fluency/blob/master/LICENSE).

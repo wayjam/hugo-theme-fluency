@@ -232,6 +232,8 @@ body {
   outline-color: var(--theme-text);
   line-height: 1.625;
   font-size: 16px; }
+  body ::selection {
+    background-color: var(--theme-primary-background); }
 
 .ionicon {
   width: 24px;
