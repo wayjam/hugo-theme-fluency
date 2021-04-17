@@ -816,6 +816,8 @@ li.hashed-tag {
     .meta .social-share a {
       color: var(--theme-text-subtle);
       margin: auto 0.5em; }
+      .meta .social-share a:active {
+        color: var(--theme-primary-base) !important; }
       .meta .social-share a svg {
         fill: currentColor;
         height: 24px; }

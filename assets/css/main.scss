@@ -17,9 +17,9 @@ body {
   line-height: 1.625;
   font-size: 16px;
 
-	::selection{
-		background-color: var(--theme-primary-background);
-	}
+  ::selection {
+    background-color: var(--theme-primary-background);
+  }
 }
 
 .ionicon {
@@ -450,7 +450,7 @@ li.hashed-tag {
       display: block;
       margin: 1em 0 1.2em;
       padding: 0 0.8em;
-			border-left: 0.25rem solid var(--theme-border);
+      border-left: 0.25rem solid var(--theme-border);
       p:first-of-type {
         margin-top: 0;
       }
@@ -626,6 +626,9 @@ li.hashed-tag {
     a {
       color: var(--theme-text-subtle);
       margin: auto 0.5em;
+      &:active {
+        color: var(--theme-primary-base)!important;
+      }
       svg {
         fill: currentColor;
         height: 24px;
