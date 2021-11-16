@@ -1,7 +1,9 @@
 {{ $siteTitle := .Site.Title }}
 {{ $title := cond .IsHome .Site.Title (print .Title " | " .Site.Title)  }}
-{{ $description := cond (isset . "Description") .Description (cond .IsPage .Summary (.Site.Params.description | default "") ) }}
-{{ $tags := cond (isset . "Keywords") (delimit .Keywords ", ") (delimit (.Params.tags | default "string[]") ", ")}}
+{{ $description := "" }}
+{{ $tags := "" }}
+{{ with .Description }} {{ $description = . }} {{ else }} {{ $description = cond .IsPage .Summary (.Site.Params.description | default "") }} {{ end }}
+{{ with .Keywords }} {{ $tags = (delimit . ", ") }} {{ else }} {{ $tags = delimit (.Params.tags | default (slice) ) ", " }} {{ end }}
 {{ $ogType := cond .IsPage "article" "website"}}
 
 <head lang="{{ .Site.LanguageCode }}">

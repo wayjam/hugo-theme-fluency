@@ -1,7 +1,7 @@
 <div class="meta article-card">
     <div class="row">
       <span class="label">{{ partial "utils/icons" "calendar-sharp" }}{{ i18n "publishedAt" }}</span><time>{{ .PublishDate.Local.Format "2006-01-02 15:04 MST" }}</time>
-      {{ if ne .Lastmod .PublishDate }}({{ i18n "updatedAt" }}<time>{{ .LastMod.Local.Format "2006-01-02 15:04 MST" }}</time>){{ end }}
+      {{ if ne .Lastmod .PublishDate }}({{ i18n "updatedAt" }}<time>{{ .Lastmod.Local.Format "2006-01-02 15:04 MST" }}</time>){{ end }}
     </div>
 
     {{ with .Params.tags }}
