@@ -30,7 +30,7 @@ function codeHelper() {
   }
 
   function addCopyButton(containerEl) {
-    const codeBlock = containerEl.querySelector('.chroma code[data-lang]')
+    const codeBlock = containerEl.querySelector('code[data-lang]')
 
     if (!codeBlock) {
       return
