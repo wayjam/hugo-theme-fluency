@@ -4,11 +4,11 @@
       {{ range .Site.Menus.footer }}
       <li>
         {{ $targetURL := .URL | relURL }}
-        <a {{ if hasPrefix $targetURL "http" }}rel="nofollow" target="_blank"{{ end }} href="{{ .URL | relURL }}" title="{{ or .Title .Name }}">{{ .Name }}</a>
+        <a {{ if hasPrefix $targetURL "http" }}rel="nofollow" target="_blank"{{ end }} href="{{ .URL | relURL }}" title="{{ or .Title .Name }}"><ion-icon name="{{ .Identifier }}"></ion-icon> {{ .Name }}</a>
       </li>
       {{ end }}
       <li>
-        <a class="nav-link navbar-button" href="{{ .Site.RSSLink }}" type="application/rss+xml">RSS</a>
+        <a class="nav-link navbar-button" href="{{ .Site.RSSLink }}" type="application/rss+xml"><ion-icon name="logo-rss"></ion-icon> RSS</a>
       </li>
       <li>
         <a
@@ -16,6 +16,7 @@
           target="_blank"
           href="https://github.com/jrodal98/website"
           title="Source Code">
+          <ion-icon name="code-slash-outline"></ion-icon>
           Source Code
         </a>
       </li>
@@ -27,5 +28,4 @@
     </div>
   </div>
 </footer>
-
 {{ partial "scripts.html" . }}
