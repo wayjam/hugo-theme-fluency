@@ -83,7 +83,7 @@ function isDarkMode() {
   const themeSelectorBtn = document.getElementById('theme-selector-button')
   const menuToggler = document.getElementById('navbar-toggler')
   const navbar = document.querySelector('nav.navbar')
-  FluencyCopyIcon = (window.FluencyCopyIcon || FluencyCopyIcon).trim()
+  FluencyCopyIcon = '<strong>CLICK TO COPY</strong>&nbsp' 
 
   themeSelectorBtn.addEventListener('click', function () {
     let theme
