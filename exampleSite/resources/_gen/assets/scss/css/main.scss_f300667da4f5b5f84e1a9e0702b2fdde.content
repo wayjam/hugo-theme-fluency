@@ -761,6 +761,19 @@ li.hashed-tag {
       font-size: 1rem;
       font-weight: 400 !important; }
 
+.post .content .toc {
+  list-style: none; }
+  .post .content .toc ul {
+    margin: 0;
+    padding-left: 1em; }
+    .post .content .toc ul li {
+      list-style: none;
+      color: var(--theme-gray); }
+      .post .content .toc ul li a {
+        color: var(--theme-primary-base);
+        border-bottom: 1px dotted var(--theme-border);
+        text-decoration: none; }
+
 .post.single {
   padding: 1rem 2rem;
   border-radius: 4px 4px 0 0; }

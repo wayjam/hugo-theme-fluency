@@ -12,6 +12,7 @@ enableEmoji: true
 
 ignoreErrors:
   - error-remote-getjson
+  - error-missing-instagram-accesstoken
 
 # googleAnalytics: UA-XXXXXXXXX-X
 # disqusShortName: hugo

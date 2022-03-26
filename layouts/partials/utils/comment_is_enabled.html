@@ -6,6 +6,6 @@
 
 {{ with .Site.Params.thirdPartyComment }} {{ $unsetCommentService = false }} {{ end }}
 
-{{ $disableComment :=  or (or $disableType $unsetCommentService) $globalDisabled }}
+{{ $disableComment := or (or $disableType $unsetCommentService) $globalDisabled }}
 
 {{ return (not $disableComment) }}

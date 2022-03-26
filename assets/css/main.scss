@@ -553,6 +553,23 @@ li.hashed-tag {
         }
       }
     }
+
+    .toc {
+      list-style: none;
+      ul {
+        margin: 0;
+        padding-left: 1em;
+        li {
+          list-style: none;
+          color: var(--theme-gray);
+          a {
+            color: var(--theme-primary-base);
+            border-bottom: 1px dotted var(--theme-border);
+            text-decoration: none;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -627,7 +644,7 @@ li.hashed-tag {
       color: var(--theme-text-subtle);
       margin: auto 0.5em;
       &:active {
-        color: var(--theme-primary-base)!important;
+        color: var(--theme-primary-base) !important;
       }
       svg {
         fill: currentColor;

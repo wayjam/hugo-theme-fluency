@@ -26,7 +26,7 @@
     <div class="copyright">
       {{ with .Site.Params.copyright }}
         {{ . | safeHTML }} {{ else }} &copy; {{ now.Format "2006"}} {{ .Site.Title }}
-      {{end}}
+      {{ end }}
     </div>
   </div>
 </footer>

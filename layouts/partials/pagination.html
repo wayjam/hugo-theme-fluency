@@ -1,6 +1,6 @@
 {{ $pag := .Paginator }}
 {{ if $pag }}
-{{ if gt $pag.TotalPages 1}}  
+{{ if gt $pag.TotalPages 1}}
 <div class="pagination">
   <ul class="pagination-container">
     {{ if $pag.HasPrev }}
