@@ -33,10 +33,12 @@
         </button>
       </div>
     </div>
-    <div class="container has-padding">
-      <div class="breadcrumb">
-        {{ partial "breadcrumb.html" . }}
+    {{ if (not site.Params.disableBreadcrumb) }}
+      <div class="container has-padding">
+        <div class="breadcrumb">
+          {{ partial "breadcrumb.html" . }}
+        </div>
       </div>
-    </div>
+    {{ end  }}
   </div>
 </header>

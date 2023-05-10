@@ -23,7 +23,11 @@
         {{ end }}
       </div>
       <article class="post-entry content">
-        {{ .Content }}
+        {{ if not site.Params.disableAnchorHeading }}
+          {{ partial "utils/anchor_heading" .Content }}
+        {{ else }}
+          {{ .Content }}
+        {{ end  }}
       </article>
     </div>
 

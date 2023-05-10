@@ -22,6 +22,14 @@ body {
   }
 }
 
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
 .ionicon {
   width: 24px;
   height: 24px;
@@ -186,7 +194,7 @@ li.hashed-tag {
 
       span {
         display: inline-block;
-        font-size: 1.25rem;
+        font-size: 1.35rem;
         font-weight: 600;
         border-bottom: 2px solid transparent;
       }
@@ -421,31 +429,47 @@ li.hashed-tag {
       word-wrap: break-word;
     }
     h1 {
-      font-size: 1.75rem;
-      margin-top: 12px;
+      font-size: 2rem;
     }
     h2 {
-      font-size: 1.55rem;
+      font-size: 1.75rem;
     }
     h3 {
-      font-size: 1.35rem;
+      font-size: 1.55rem;
     }
     h4 {
-      font-size: 1.15rem;
+      font-size: 1.35rem;
     }
     h5,
     h6 {
       font-size: 1rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
     }
+    h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-      line-height: 1.3;
-      margin-bottom: 12px;
-      margin-top: 10px;
+      color: var(--theme-text);
+      line-height: 1.2;
+      &:hover .heading-anchor {
+        display: inline-flex;
+        color: var(--theme-text-subtle);
+        margin-inline-start: 8px;
+        font-weight: 500;
+        user-select: none;
+      }
     }
+    a.heading-anchor {
+      text-decoration: none;
+      &:hover {
+        box-shadow: 0 1px;
+        box-decoration-break: clone;
+      }
+    }
+
     blockquote {
       display: block;
       margin: 1em 0 1.2em;
@@ -911,11 +935,10 @@ li.hashed-tag {
           margin-left: 2px;
         }
       }
-      .right {
+      .date {
         font-size: 0.8125rem;
         font-weight: 400;
         font-style: italic;
-        float: right;
       }
       .section {
         a {
@@ -1030,6 +1053,20 @@ li.hashed-tag {
         color: var(--theme-primary-hover);
         text-decoration: none;
       }
+    }
+  }
+}
+
+#main.not-found {
+  .container {
+    text-align: center;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    #title {
+      color: var(--theme-primary-base);
+    }
+    a:visited {
+      color: var(--theme-primary-base);
     }
   }
 }

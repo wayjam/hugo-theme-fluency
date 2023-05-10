@@ -46,12 +46,17 @@ params:
     index: 5
     list: 10
     archives: 20
-  
+
   # extra info below post
   # extraMeta: |
   #   this is a license
   #   <p>another line</p>
-  
+
+  disableSocialShare: false
+  disableIndexSummary: false
+  disableAnchorHeading: false
+  disableBreadcrumb: false
+
   # comment
   disableComment: true
   disableCommentByType:
