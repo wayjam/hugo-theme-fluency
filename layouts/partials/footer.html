@@ -8,7 +8,9 @@
       </li>
       {{ end }}
       <li>
-        <a class="nav-link navbar-button" href="{{ .Site.RSSLink }}" type="application/rss+xml">RSS</a>
+        {{ with .OutputFormats.Get "RSS" -}}
+          <a class="nav-link navbar-button" href="{{ .Permalink }}" type="{{ .MediaType.Type }}">RSS</a>
+        {{ end -}}
       </li>
       <li>
         <a
