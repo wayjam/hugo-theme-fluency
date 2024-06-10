@@ -65,7 +65,7 @@
   {{ end}}
 
   <!-- Reset -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/modern-normalize@1.0.0/modern-normalize.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.min.css">
 
   <!-- Use Hugo Pipes to process the Sass file (convert to CSS, minify, and add a hash) -->
   {{ $base_style := resources.Get "css/basic.scss" | toCSS }}
@@ -73,7 +73,7 @@
 
   {{ $CSS := slice $base_style $main_style | resources.Concat "style.css" }}
 
-  {{ if not .Site.IsServer }}
+  {{ if not hugo.IsServer }}
     {{ $CSS := $CSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $CSS.Permalink }}" integrity="{{ $CSS.Data.Integrity }}" rel="preload stylesheet" as="style"/>
   {{ else }}
@@ -81,7 +81,7 @@
   {{ end }}
 
   <!-- misc -->
-  {{ if not .Site.IsServer }}
-    {{ template "_internal/google_analytics_async.html" . }}
+  {{ if not hugo.IsServer }}
+    {{ template "_internal/google_analytics.html" . }}
   {{ end }}
 </head>

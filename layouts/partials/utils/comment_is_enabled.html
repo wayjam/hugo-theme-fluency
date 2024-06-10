@@ -2,7 +2,7 @@
 {{ $disableType := (in (site.Params.disableCommentByType | default "[]string") .Type) }}
 {{ $unsetCommentService := true }}
 
-{{ with .Site.DisqusShortname }} {{ $unsetCommentService = false }} {{ end }}
+{{ with .Site.Config.Services.Disqus.Shortname }} {{ $unsetCommentService = false }} {{ end }}
 
 {{ with .Site.Params.thirdPartyComment }} {{ $unsetCommentService = false }} {{ end }}
 

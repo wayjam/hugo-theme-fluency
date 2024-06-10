@@ -1,108 +1,99 @@
 /*
  * Fluency
  */
+'use strict'
 
-let FluencyCopyIcon = ''
-const preferDarkScheme = window.matchMedia('(prefers-color-scheme: dark)')
+// Use a more descriptive variable name.
+const copyIcon = (window.FluencyCopyIcon || '').trim()
 
-// code helper
-function codeHelper() {
-  'use strict'
+// Function to toggle the visibility of the copy message.
+function flashCopyMessage(button, message) {
+  const originalContent = button.innerHTML
+  button.textContent = message
+  setTimeout(() => {
+    button.innerHTML = originalContent
+  }, 1000)
+}
 
-  if (!document.queryCommandSupported('copy')) {
+// Function to add a copy button to a code block.
+function addCopyButton(codeBlock) {
+  const container = codeBlock.querySelector('code[data-lang]')
+  if (!container) {
     return
   }
+  const helper = document.createElement('div')
+  helper.className = 'code-helper'
 
-  function flashCopyMessage(el, msg) {
-    el.textContent = msg
-    setTimeout(function () {
-      el.innerHTML = `${FluencyCopyIcon}`
-    }, 1000)
-  }
+  const codeLang = document.createElement('span')
+  codeLang.className = 'lang'
+  codeLang.textContent = container.dataset.lang
 
-  function selectText(node) {
-    const selection = window.getSelection()
-    const range = document.createRange()
-    range.selectNodeContents(node)
-    selection.removeAllRanges()
-    selection.addRange(range)
-    return selection
-  }
+  const copyBtn = document.createElement('button')
+  copyBtn.className = 'action'
+  copyBtn.setAttribute('aria-label', 'copy')
+  copyBtn.innerHTML = copyIcon
 
-  function addCopyButton(containerEl) {
-    const codeBlock = containerEl.querySelector('code[data-lang]')
+  helper.appendChild(codeLang)
+  helper.appendChild(copyBtn)
 
-    if (!codeBlock) {
-      return
-    }
-
-    const helper = document.createElement('div')
-    helper.className = 'code-helper'
-
-    const codeLang = document.createElement('span')
-    codeLang.className = 'lang'
-    codeLang.textContent = codeBlock.getAttribute('data-lang')
-
-    const copyBtn = document.createElement('button')
-    copyBtn.className = 'action'
-    copyBtn.setAttribute('aria-label', 'copy')
-    copyBtn.innerHTML = `${FluencyCopyIcon}`
-
-    helper.appendChild(codeLang)
-    helper.appendChild(copyBtn)
-
-    const codeEl = containerEl.firstElementChild
-    copyBtn.addEventListener('click', function () {
-      try {
-        const selection = selectText(codeEl)
-        document.execCommand('copy')
-        selection.removeAllRanges()
-
-        flashCopyMessage(copyBtn, 'Copied')
-      } catch (e) {
-        console && console.log(e)
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard
+      .writeText(container.textContent)
+      .then(() => {
+        flashCopyMessage(copyBtn, 'Copied!')
+      })
+      .catch((err) => {
+        console.error('Failed to copy: ', err)
         flashCopyMessage(copyBtn, "Failed :'(")
-      }
-    })
+      })
+  })
 
-    containerEl.insertBefore(helper, codeEl)
+  codeBlock.insertBefore(helper, codeBlock.firstElementChild)
+}
+
+// Function to toggle the theme.
+function toggleTheme(event) {
+  const body = document.body
+  const preferDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+  let theme = 'light'
+  if (event) {
+    // MediaQueryListEvent
+    if (event.type === 'change') {
+      theme = preferDarkScheme ? 'dark' : 'light'
+    } else {
+      // PointerEvent
+      theme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark'
+    }
+  } else {
+    theme = localStorage.getItem('theme') || (preferDarkScheme ? 'dark' : 'light')
   }
 
-  // Add copy button to code blocks
-  const highlightBlocks = document.querySelectorAll('.post.single div.highlight')
-  Array.prototype.forEach.call(highlightBlocks, addCopyButton)
+  body.classList.remove('theme-dark', 'theme-light')
+  body.classList.add(`theme-${theme}`)
+  localStorage.setItem('theme', theme)
 }
 
-// detect system prefered color
-function isDarkMode() {
-  return preferDarkScheme.matches
-}
+// Event listener for the theme selector button.
+document.getElementById('theme-selector-button').addEventListener('click', toggleTheme)
 
-; (function () {
-  const body = document.body
-  const themeSelectorBtn = document.getElementById('theme-selector-button')
-  const menuToggler = document.getElementById('navbar-toggler')
-  const navbar = document.querySelector('nav.navbar')
-  FluencyCopyIcon = (window.FluencyCopyIcon || FluencyCopyIcon).trim()
+// Event listener for the theme selector button.
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', toggleTheme)
 
-  themeSelectorBtn.addEventListener('click', function () {
-    let theme
-    if (isDarkMode()) {
-      body.classList.remove('theme-dark')
-      body.classList.toggle('theme-light')
-      theme = body.classList.contains('theme-light') ? 'light' : 'dark'
-    } else {
-      body.classList.remove('theme-light')
-      body.classList.toggle('theme-dark')
-      theme = body.classList.contains('theme-dark') ? 'dark' : 'light'
-    }
+// Event listener for the menu toggler.
+const menuToggler = document.getElementById('navbar-toggler')
+const navbar = document.querySelector('nav.navbar')
+menuToggler.addEventListener('click', () => {
+  navbar.classList.toggle('active')
+})
 
-    window.localStorage.setItem('theme', theme)
-  })
+// Add copy buttons to all code blocks on page load.
+document.addEventListener('DOMContentLoaded', () => {
+  // Set initial theme based on user preference or system settings.
+  toggleTheme()
 
-  menuToggler.addEventListener('click', function () {
-    navbar.classList.toggle('active')
-  })
-
-  codeHelper()
-})()
+  if (navigator.clipboard) {
+    const codeBlocks = document.querySelectorAll('.post.single div.highlight')
+    codeBlocks.forEach(addCopyButton)
+  }
+})
