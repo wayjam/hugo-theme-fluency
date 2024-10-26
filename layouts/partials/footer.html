@@ -7,11 +7,11 @@
         <a {{ if hasPrefix $targetURL "http" }}rel="nofollow" target="_blank"{{ end }} href="{{ .URL | relURL }}" title="{{ or .Title .Name }}">{{ .Name }}</a>
       </li>
       {{ end }}
-      <li>
-        {{ with .OutputFormats.Get "RSS" -}}
+      {{ with .OutputFormats.Get "RSS" -}}
+        <li>
           <a class="nav-link navbar-button" href="{{ .Permalink }}" type="{{ .MediaType.Type }}">RSS</a>
-        {{ end -}}
-      </li>
+        </li>
+      {{ end -}}
       <li>
         <a
           rel="nofollow"

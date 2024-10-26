@@ -67,6 +67,8 @@ params:
   # refer to https://gohugo.io/content-management/formats/
   mathRender: true
 
+  enableFullContentRSS: true
+
   # customScript: |
   #   <script>console.log('hello world')</script>
 

@@ -19,12 +19,7 @@
   <title>{{ $title }}</title>
   <link rel="canonical" href="{{ .Permalink }}" />
   {{ with .OutputFormats.Get "RSS" }}
-    <link
-      href="{{ .RelPermalink }}"
-      rel="alternate"
-      type="application/rss+xml"
-      title="{{ $siteTitle }}"
-    />
+    {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink $siteTitle | safeHTML }}
   {{ end }}
 
   <!-- open graph -->
