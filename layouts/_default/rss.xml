@@ -33,7 +33,8 @@
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss
   version="2.0"
-  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
   {{ if .Site.Params.enableFullContentRSS }}
     xmlns:content="http://purl.org/rss/1.0/modules/content/"
   {{ end }}
@@ -60,7 +61,7 @@
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | transform.XMLEscape | safeHTML }}</description>
       {{ if .Site.Params.enableFullContentRSS }}
-        <content:encoded>{{ .Content | transform.XMLEscape | safeHTML }}</content:encoded>
+        <content:encoded>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</content:encoded>
       {{ end }}
     </item>
     {{- end }}
